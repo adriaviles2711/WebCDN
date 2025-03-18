@@ -1,12 +1,339 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset ="UTF-8">
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <title>Mi página de prueba</title>
-  </head>
-  <body>
-    <h1>Bienvenidos al sitio web de prueba</h1>
-    <p>Esto es un sitio creado para experimentar con CDNs</p>
-  </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluciones de Computación en la Nube</title>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 0;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .features {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .card:hover .card-img img {
+            transform: scale(1.1);
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .testimonials {
+            background-color: var(--light);
+            padding: 5rem 0;
+        }
+        
+        .testimonial {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="hero">
+                <h1>Soluciones de Computación en la Nube</h1>
+                <p>Transformando empresas con infraestructura en la nube escalable, segura y eficiente</p>
+                <a href="#features" class="btn">Explorar Servicios</a>
+            </div>
+        </div>
+    </header>
+    
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios en la Nube</h2>
+                <p>Descubre cómo nuestras soluciones integrales en la nube pueden ayudar a tu empresa a crecer e innovar</p>
+            </div>
+            
+            <div class="cards">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="/placeholder.svg?height=400&width=600" alt="Infraestructura como Servicio">
+                    </div>
+                    <div class="card-content">
+                        <h3>Infraestructura como Servicio</h3>
+                        <p>Recursos informáticos escalables que incluyen máquinas virtuales, almacenamiento y componentes de red entregados como servicio.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="/placeholder.svg?height=400&width=600" alt="Plataforma como Servicio">
+                    </div>
+                    <div class="card-content">
+                        <h3>Plataforma como Servicio</h3>
+                        <p>Entorno completo de desarrollo y despliegue en la nube, con recursos que permiten entregar desde aplicaciones simples hasta sofisticadas aplicaciones empresariales.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="/placeholder.svg?height=400&width=600" alt="Software como Servicio">
+                    </div>
+                    <div class="card-content">
+                        <h3>Software como Servicio</h3>
+                        <p>Aplicaciones de software entregadas a través de internet, bajo demanda y típicamente por suscripción, eliminando la necesidad de que las organizaciones instalen y ejecuten aplicaciones en sus propios ordenadores.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lo Que Dicen Nuestros Clientes</h2>
+                <p>Escucha a las empresas que han transformado sus operaciones con nuestras soluciones en la nube</p>
+            </div>
+            
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"La implementación de sus soluciones de infraestructura en la nube ha reducido nuestros costos operativos en un 40% mientras mejora la fiabilidad de nuestro sistema. La migración fue fluida y su equipo de soporte es excepcional."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="/placeholder.svg?height=100&width=100" alt="Juan Pérez">
+                    <div>
+                        <h4>Juan Pérez</h4>
+                        <p>Director de Tecnología, Innovaciones Tecnológicas</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"Sus soluciones de seguridad en la nube nos han dado tranquilidad. Hemos podido escalar nuestro negocio sin preocuparnos por violaciones de datos o vulnerabilidades del sistema."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="/placeholder.svg?height=100&width=100" alt="María López">
+                    <div>
+                        <h4>María López</h4>
+                        <p>CEO, Datos Seguros</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <div class="container">
+            <h2>¿Listo para Transformar tu Negocio?</h2>
+            <p>Comienza con nuestras soluciones en la nube hoy y experimenta la diferencia que una infraestructura confiable y escalable puede hacer.</p>
+            <a href="#contact" class="btn">Contáctanos</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Inicio</a>
+                <a href="#">Servicios</a>
+                <a href="#">Sobre Nosotros</a>
+                <a href="#">Blog</a>
+                <a href="#">Contacto</a>
+            </div>
+            <p>&copy; 2025 Soluciones de Computación en la Nube. Creado por Adrián Avilés Sánchez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
 </html>
